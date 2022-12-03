@@ -80,7 +80,8 @@ footer {
 
 body {
   margin: 0;
-  line-height: 1; }
+  line-height: 1;
+  min-height: 200vh; }
 
 header {
   display: flex;
@@ -134,11 +135,13 @@ ul.topnav li a {
   text-align: center;
   padding: 14px;
   color: #FFFCFC;
-  transition: 0.5s; }
+  transition: 0.5s;
+  font-size: 20px;
+  font-weight: 300; }
 
 ul.topnav li a:hover {
   letter-spacing: 4px;
-  font-size: 20px;
+  font-size: 22px;
   transition: 0.3s;
   color: #7E5936; }
 
@@ -158,17 +161,17 @@ header.sticky nav ul li .logo {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: url(../assets/bg.jpg) no-repeat;
+  background: url(../bakeAssets/bg.jpg) no-repeat;
   background-size: cover;
   background-position: center; }
 
-.Kitchen {
+.bake {
   color: #7E5936;
-  font-size: 100px; }
+  font-size: 50px; }
 
-.bella {
+.cake {
   color: #FFFCFC;
-  font-size: 100px; }
+  font-size: 50px; }
 
 .lead {
   color: #7E5936;
@@ -189,7 +192,7 @@ header.sticky nav ul li .logo {
   display: flex;
   position: relative;
   align-items: center;
-  background: url(../assets/about-bg.jpg) no-repeat;
+  background: url(../bakeAssets/about.jpg) no-repeat;
   background-size: cover;
   background-position: center;
   transition: 0.7s; }
@@ -234,6 +237,25 @@ header.sticky nav ul li .logo {
 
 .icon-check {
   color: #d3ad7f; }
+
+.jumbotron {
+  background: none; }
+
+.display-3 {
+  color: #FFFCFC; }
+
+.abouth1, .aboutp1 {
+  color: #FFFCFC; }
+
+.aboutblur {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: 0;
+  background: rgba(38, 38, 38, 0.1);
+  backdrop-filter: blur(20px); }
 
 .btn-wishList {
   padding: 4px 30px;
@@ -312,15 +334,15 @@ header.sticky nav ul li.dropDownIcon a div.bars div.bar {
   background: url(../assets/about.jpg) no-repeat;
   background-size: cover;
   background-position: center;
-  border: 3px solid rgba(211, 173, 127, 0.1);
+  border: 5px solid rgba(211, 173, 127, 0.3);
   transition: 0.7s;
   margin: auto;
-  width: 400px;
+  width: 340px;
   height: 300px; }
 
 .col-img:hover {
-  width: 500px;
-  height: 400px;
+  width: 400px;
+  height: 370px;
   transition: 0.7s; }
 
 .img-list {
@@ -348,31 +370,15 @@ a {
 
   ul.topnav li.dropDownIcon {
     display: block;
-    float: right; }
-
-  ul.topnav.responsive li.dropDownIcon {
+    float: right;
     position: absolute;
     top: 0;
     right: 0; }
 
-  ul.topnav.responsive {
-    position: relative; }
-
-  nav ul.topnav.responsive li.topnav-right {
-    float: none; }
-
-  ul.topnav.responsive li {
-    display: inline;
-    float: none;
-    transition: 0.3s; }
-
-  ul.topnav.resposive li a {
-    display: block;
-    text-align: left;
-    transition: 0.3s; }
-
-  ul.topnav.resposive li a:hover {
-    background-color: red; } }
+  ul.topnav li a {
+    padding: 14px;
+    transition: 0.5s;
+    font-size: 16px; } }
 @media screen and (max-width: 680px) {
   .btn-wishList {
     padding: 8px 30px;
@@ -386,19 +392,49 @@ a {
 
   .logo {
     position: absolute;
-    top: 20px;
-    left: 30px;
+    top: 5px;
+    left: 5px;
     font-size: 20px;
     letter-spacing: 2px;
-    transition: 0.6s; } }
-@media screen and (max-width: 680px) {
-  .bella {
-    font-size: 40px;
-    padding-left: 0px; }
+    transition: 0.6s; }
 
-  .Kitchen {
-    font-size: 40px;
-    padding-right: 200px; }
+  ul.topnav.responsive li.dropDownIcon {
+    position: absolute;
+    top: -10px;
+    right: -10px; }
+
+  ul.topnav.responsive {
+    position: relative;
+    transition: 0.7s; }
+
+  nav ul.topnav.responsive li.topnav-right {
+    float: none;
+    transition: 0.7s; }
+
+  ul.topnav.responsive li {
+    display: inline;
+    float: none;
+    transition: 0.3s; }
+
+  ul.topnav.resposive li a {
+    font-size: 16px;
+    display: block;
+    text-align: left;
+    transition: 0.3s; }
+
+  ul.topnav.responsive li.dropDownIcon {
+    display: block;
+    float: right;
+    position: absolute;
+    top: -10px;
+    right: 0;
+    transition: 0.7s; } }
+@media screen and (max-width: 680px) {
+  .bake {
+    font-size: 30px; }
+
+  .cake {
+    font-size: 30px; }
 
   .lead {
     font-size: 24px; } }

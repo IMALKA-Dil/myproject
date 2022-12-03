@@ -21,33 +21,18 @@ a
     ul.topnav li.dropDownIcon
         display: block
         float: right
-
-
-    ul.topnav.responsive li.dropDownIcon
         position: absolute
         top: 0
         right: 0
 
-    ul.topnav.responsive
-        position: relative
 
 
-    nav ul.topnav.responsive li.topnav-right
-        float: none
 
-    ul.topnav.responsive li
-        display: inline
-        float: none
-        transition: 0.3s
+    ul.topnav li a
+        padding: 14px
+        transition: 0.5s
+        font-size: 16px
 
-    ul.topnav.resposive li a
-        display: block
-        text-align: left
-        transition: 0.3s
-
-
-    ul.topnav.resposive li a:hover
-        background-color: red
 
 @media screen and (max-width:680px)
     .btn-wishList
@@ -61,20 +46,55 @@ a
         border: 1px solid $base-luxary-gold6
     .logo
         position: absolute
-        top: 20px
-        left: 30px
+        top: 5px
+        left: 5px
         font-size: 20px
         letter-spacing: 2px
         transition: 0.6s
 
 
+    ul.topnav.responsive li.dropDownIcon
+        position: absolute
+        top: -10px
+        right: -10px
+
+    ul.topnav.responsive
+        position: relative
+        transition: 0.7s
+
+
+    nav ul.topnav.responsive li.topnav-right
+        float: none
+        transition: 0.7s
+
+    ul.topnav.responsive li
+        display: inline
+        float: none
+        transition: 0.3s
+
+    ul.topnav.resposive li a
+        font-size: 16px
+        display: block
+        text-align: left
+        transition: 0.3s
+
+
+    ul.topnav.responsive li.dropDownIcon
+        display: block
+        float: right
+        position: absolute
+        top: -10px
+        right: 0
+        transition: 0.7s
+
+
 @media screen and (max-width:680px)
-    .bella
-        font-size: 40px
-        padding-left: 0px
-    .Kitchen
-        font-size: 40px
-        padding-right: 200px
+    .bake
+        font-size: 30px
+
+    .cake
+        font-size: 30px
+
     .lead
         font-size: 24px
 @media screen and (max-width:680px)
