@@ -1,0 +1,70 @@
+.btn-wishList
+  padding: 4px 30px
+  border-radius: 15px
+  font-size: 25px
+  font-weight: 500
+  text-decoration: none
+  background: none
+  color: $base-luxary-gold3
+  border: 1px solid $base-luxary-gold6
+
+.btn-wishList:hover
+
+  background: $base-luxary-gold6
+  color: $white
+  border: 1px solid $base-luxary-gold6
+
+.container .nav-menu-list .dropDownIcon
+  font-size: 50px
+  display: none
+
+.bars
+  position: relative
+  width: 35px
+  height: 35px
+  background: none
+  border-radius: 20px
+
+  cursor: pointer
+  padding: 7px
+  display: flex
+  justify-content: center
+  align-items: center
+  overflow: hidden
+
+
+.bar
+  position: absolute
+  width: 20px
+  height: 3px
+  background: $white
+  border-radius: 1px
+  transition: 0.5s
+
+.bar-1
+  transform: translateY(-10px)
+  width: 50%
+  left: 5px
+
+.bar-3
+  transform: translateY(10px)
+  width: 30%
+  left: 5px
+
+
+.bars.active .bar-1
+  width: 25px
+  transform: translateY(0px) rotate(45deg)
+
+
+.bars.active .bar-2
+  transform: translateX(35px)
+
+
+.bars.active .bar-3
+  width: 20px
+  transform: translateY(0px) rotate(315deg)
+
+
+header.sticky nav ul li.dropDownIcon a  div.bars div.bar
+  background: $base-luxary-gold5
