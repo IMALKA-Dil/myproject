@@ -168,11 +168,11 @@ header.sticky nav ul li .logo {
 
 .bake {
   color: #7E5936;
-  font-size: 50px; }
+  font-size: 43px; }
 
 .cake {
   color: #FFFCFC;
-  font-size: 50px; }
+  font-size: 43px; }
 
 .lead {
   color: #7E5936;
@@ -193,7 +193,7 @@ header.sticky nav ul li .logo {
   display: flex;
   position: relative;
   align-items: center;
-  background: url(../bakeAssets/about.jpg) no-repeat;
+  background: url(../bakeAssets/about1.jpg) no-repeat;
   background-size: cover;
   background-position: center;
   transition: 0.7s; }
