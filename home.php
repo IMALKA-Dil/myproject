@@ -212,6 +212,41 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
 
 
 
+<divition class="Menu">
+
+  <div class="whysus-content">
+
+      <h1 class="Menuh1">Menu</h1>
+      <div class="whyUs-line">
+
+
+    </div>
+    <br />
+  <h1 class="Menu-P">Why Choose Our Restaurant </h1>
+   </div>
+   <br/>
+   <div class="row">
+     <div class="col">
+
+     </div>
+     <ul class="menu-list">
+       <li class="menu-item"> <a href="" class="menu-item-a">Chocolate </a></li>
+        <li class="menu-item"> <a href="" class="menu-item-a">Chocolate </a></li>
+     <li class="menu-item"> <a href="" class="menu-item-a">Chocolate </a></li>
+     <li class="menu-item"> <a href="" class="menu-item-a">Chocolate </a></li>
+
+     </ul>
+
+     <div class="col">
+
+     </div>
+   </div>
+
+
+</divition>
+
+
+
 
 
 

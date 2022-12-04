@@ -235,6 +235,14 @@ header.sticky nav ul li .logo {
   position: relative;
   align-items: center; }
 
+.Menu {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  position: relative;
+  align-items: center;
+  background: #1e1e1d; }
+
 .about-h1 {
   color: #d3ad7f;
   font-size: 2rem; }
@@ -318,6 +326,15 @@ header.sticky nav ul li .logo {
   color: #FFFCFC;
   text-align: center; }
 
+.Menuh1 {
+  color: #666;
+  font-size: 22px;
+  letter-spacing: 3px; }
+
+.Menu-P {
+  color: #7E5936;
+  font-size: 1.25rem; }
+
 .wy-us-row {
   padding-top: 70px;
   margin-top: 70px; }
@@ -346,6 +363,21 @@ header.sticky nav ul li .logo {
   .whyus-div:hover .whyus-content {
     padding-top: 15px;
     transition: 1s; }
+
+.menu-list {
+  display: inline-block; }
+  .menu-list .menu-item {
+    display: block;
+    float: left;
+    align-items: center; }
+    .menu-list .menu-item .menu-item-a {
+      text-decoration: none;
+      font-size: 1rem;
+      color: #FFFCFC;
+      padding: 20px;
+      font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI"; }
+    .menu-list .menu-item .menu-item-a:hover {
+      color: #F5CB86; }
 
 .btn-wishList {
   padding: 4px 30px;
