@@ -110,16 +110,18 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
 
 <ol>
 
-  <li>
+  <li class="about-li">
     # Lorem ipsum dolor sit amet, consectetur adipiscing elit,
   </li>
 
-  <li>
-    # Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-  </li>  <li>
+    <li class="about-li">
       # Lorem ipsum dolor sit amet, consectetur adipiscing elit,
     </li>
 
+
+      <li class="about-li">
+        # Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+      </li>
 </ol>
     </div>
     <div class="col">
@@ -136,7 +138,56 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
 
 </divition>
 
+<divition class="whyus">
 
+<div class="row">
+
+    <h1 class="whyush1">Why Us</h1>
+    <div class="whyUs-line">
+
+
+  </div>
+
+
+  </div>
+
+  <div class="row">
+    <div class="col">
+
+    </div>
+    <div class="col-sm-12 col-lg-4 whyus-div">
+
+    </div>
+    <div class="col">
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+
+    </div>
+    <div class="col-sm-12 col-lg-4 whyus-div">
+
+    </div>
+    <div class="col">
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+
+    </div>
+    <div class="col-sm-12 col-lg-4 whyus-div">
+
+    </div>
+    <div class="col">
+
+    </div>
+  </div>
+
+</divition>
 
 
 

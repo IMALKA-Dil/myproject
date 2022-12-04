@@ -143,7 +143,8 @@ ul.topnav li a:hover {
   letter-spacing: 4px;
   font-size: 22px;
   transition: 0.3s;
-  color: #7E5936; }
+  color: #7E5936;
+  transition: -10px; }
 
 ul.topnav li.dropDownIcon {
   display: none; }
@@ -227,12 +228,21 @@ header.sticky nav ul li .logo {
   margin: auto;
   backdrop-filter: blur(10px); }
 
+.whyus {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  position: relative;
+  align-items: center; }
+
 .about-h1 {
   color: #d3ad7f;
   font-size: 2rem; }
 
 .about-p {
   color: #d3ad7f;
+  font-weight: 400;
+  margin: 10px 10px;
   font-size: 1.25rem; }
 
 .icon-check {
@@ -256,6 +266,35 @@ header.sticky nav ul li .logo {
   margin: 0;
   background: rgba(38, 38, 38, 0.1);
   backdrop-filter: blur(20px); }
+
+.col-sm-12 {
+  margin-top: 15px; }
+
+.about-li {
+  color: #FFFCFC;
+  font-size: 16px;
+  font-weight: bold; }
+
+.aboutp1 {
+  color: #FFFCFC;
+  font-weight: bold;
+  font-size: 16px; }
+
+.whyush1 {
+  color: #666;
+  font-size: 22px; }
+
+.whyUs-line {
+  background-color: #7E5936;
+  width: 150px;
+  height: 1px;
+  margin-top: 50%;
+  margin-bottom: 50%;
+  margin-left: 10px; }
+  .whyUs-line .whyus-div {
+    width: 150px;
+    height: 150px;
+    background-color: red; }
 
 .btn-wishList {
   padding: 4px 30px;
