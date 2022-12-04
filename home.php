@@ -162,6 +162,15 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
 
     <div class=" col-sm-12 col-lg-4 ">
       <div class="img-fluid size-img whyus-div">
+        <div class="whyus-content">
+          <h1 class="whyus-h1-nomber">01</h1>
+          <h1 class="whyus-h1-caption">lorem Ipsum</h1>
+          <p class="whyus-p-paragraph">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit,<br /> sed do eiusmod tempo
+            r incididunt
+
+          </p>
+        </div>
 
       </div>
     </div>
@@ -171,14 +180,30 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
 
         <div class=" col-sm-12 col-lg-4 ">
           <div class="img-fluid size-img whyus-div">
+            <div class="whyus-content">
+              <h1 class="whyus-h1-nomber">02</h1>
+              <h1 class="whyus-h1-caption">lorem Ipsum</h1>
+              <p class="whyus-p-paragraph">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit,<br /> sed do eiusmod tempo
+                r incididunt
 
+              </p>
+            </div>
           </div>
         </div>
 
-        
+
             <div class=" col-sm-12 col-lg-4 ">
               <div class="img-fluid size-img whyus-div">
+                <div class="whyus-content">
+                  <h1 class="whyus-h1-nomber">03</h1>
+                  <h1 class="whyus-h1-caption">lorem Ipsum</h1>
+                  <p class="whyus-p-paragraph">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,<br /> sed do eiusmod tempo
+                    r incididunt
 
+                  </p>
+                </div>
               </div>
             </div>
   </div>
