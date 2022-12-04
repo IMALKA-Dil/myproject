@@ -31,7 +31,9 @@
         <li><a href="#">Contact</a></li>
         <li><a href="#" class="btn-wishList">WishList</a></li>
 
-       <li class="dropDownIcon"><a href="javascript:void(0);" onclick="dropDownMenu()">&#9776;</a></li>
+       <li class="dropDownIcon"><a href="javascript:void(0);" onclick="dropDownMenu()"><div class="menu-btn">
+    <div class="menu-btn__burger"></div>
+  </div></a></li>
 
 
       </ul>
@@ -138,53 +140,47 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
 
 </divition>
 
+
+
 <divition class="whyus">
 
-<div class="row">
+<div class="whysus-content">
 
     <h1 class="whyush1">Why Us</h1>
     <div class="whyUs-line">
 
 
   </div>
+  <br />
+<h1 class="wychose">Why Choose Our Restaurant </h1>
+ </div>
+ <br />
+ <br />
+ <br />
 
+  <div class="row wy-us-row">
 
-  </div>
+    <div class=" col-sm-12 col-lg-4 ">
+      <div class="img-fluid size-img whyus-div">
 
-  <div class="row">
-    <div class="col">
-
+      </div>
     </div>
-    <div class="col-sm-12 col-lg-4 whyus-div">
 
-    </div>
-    <div class="col">
 
-    </div>
-  </div>
 
-  <div class="row">
-    <div class="col">
 
-    </div>
-    <div class="col-sm-12 col-lg-4 whyus-div">
+        <div class=" col-sm-12 col-lg-4 ">
+          <div class="img-fluid size-img whyus-div">
 
-    </div>
-    <div class="col">
+          </div>
+        </div>
 
-    </div>
-  </div>
+        
+            <div class=" col-sm-12 col-lg-4 ">
+              <div class="img-fluid size-img whyus-div">
 
-  <div class="row">
-    <div class="col">
-
-    </div>
-    <div class="col-sm-12 col-lg-4 whyus-div">
-
-    </div>
-    <div class="col">
-
-    </div>
+              </div>
+            </div>
   </div>
 
 </divition>
