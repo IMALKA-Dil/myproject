@@ -432,7 +432,7 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
 <divition class="Contact">
 
 
-  <div class="row">
+  <div class="row container aos-init aos-animate">
     <div class="col-lg-4">
       <div class="info">
         <div class="address">
@@ -453,23 +453,49 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
         </div>
         <div class="email">
           <i class="bi bi-envelope"></i>
-          <h4></h4>
+          <h4>Email:</h4>
           <p>
-
+            cakeNbakeKURUWITA@gmail.com
           </p>
         </div>
-        <div class="email">
-
+        <div class="phone">
+          <i class="bi bi-phone"></i>
+          <h4>Call:</h4>
+          <p>
+            07071563313
+          </p>
         </div>
       </div>
 
+</div>
 
 
+    <div class="col-lg-8 form-inputs">
+<form action="" method="" class="php-email-form">
+  <div class="row">
+    <div class="col-md-6 form-group">
+      <input type="text" class="form-control text-email" name="name" id="name" placeholder="Your Name" required/>
+    </div>
+    <div class="col-md-6 form-group mt-3 mt-md-0">
+      <input type="email" class="form-control text-email" id="email" name="email" placeholder="Your Email" required/>
+    </div>
+  </div>
+  <div class="form-group mt-3">
+    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required/>
+  </div>
+  <div class="form-group mt-3">
+    <textarea class="form-control" id="message" name="message" placeholder="message" required rows="8"></textarea>
+  </div>
 
-    <div class="col-lg-8">
+<div class="my-3">
+               <div class="loading">Loading</div>
+               <div class="error-message"></div>
+               <div class="sent-message">Your message has been sent. Thank you!</div>
+             </div>
+             <div class="text-center"><button type="submit">Send Message</button></div>
 
-
-
+</form>
+</div>
 
 
 

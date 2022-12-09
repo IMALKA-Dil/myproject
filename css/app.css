@@ -461,6 +461,79 @@ header.sticky nav ul li .logo {
     transform: scale(1);
     transition: 0.6s ease-in-out; }
 
+.form-inputs {
+  margin-top: 20px;
+  margin-bottom: 20px; }
+
+.php-email-form input {
+  height: 44px; }
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.375rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
+
+.php-email-form input, .php-email-form textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+  background: #0c0b09;
+  border-color: #625b4b;
+  color: white; }
+
+.php-email-form .loading {
+  display: none;
+  padding: 15px;
+  text-align: center; }
+
+.php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #cda45e;
+  border-top-color: #1a1814;
+  -webkit-animation: animate-loading 1s linear infinite;
+  animation: animate-loading 1s linear infinite; }
+
+.php-email-form .error-message {
+  display: none;
+  color: #fff;
+  background: #ed3c0d;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600; }
+
+.php-email-form .sent-message {
+  display: none;
+  color: #fff;
+  background: #18d26e;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600; }
+
+.text-center {
+  text-align: center !important; }
+
+.text-email {
+  position: relative;
+  left: 0;
+  right: 0; }
+
 .btn-wishList {
   padding: 4px 30px;
   border-radius: 15px;
@@ -572,6 +645,16 @@ header.sticky nav ul li.dropDownIcon a div.bars div.bar {
 
 .menu-btn.open .menu-btn__burger::after {
   transform: rotate(-45deg) translate(35px, 35px); }
+
+/* form btn */
+.php-email-form button[type=submit] {
+  background: #cda45e;
+  border: 0;
+  padding: 15px 35px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;
+  cursor: pointer; }
 
 .b-video-img {
   width: 100%;
@@ -737,5 +820,9 @@ a {
 
   .wy-us-row {
     padding-bottom: 20px; } }
+@media screen and (max-width: 680px) {
+  .form-inputs {
+    margin-top: 20px;
+    margin-bottom: 20px; } }
 
 /*# sourceMappingURL=app.css.map */
