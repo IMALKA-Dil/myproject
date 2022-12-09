@@ -9,6 +9,8 @@
 
       <link rel="stylesheet" type="text/css" href="B-css\bootstrap.min.css">
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       <link rel="stylesheet" href="B-css/all.min.css">
+       <link rel="stylesheet" href="B-css/bootstrap-icons/bootstrap-icons.css" />
 
 
       <link rel="stylesheet" type="text/css" href="css/app.css">
@@ -25,7 +27,7 @@
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Menu</a></li>
-        <li><a href="#">Specials</a></li>
+      <!--  <li><a href="#">Specials</a></li> -->
         <li><a href="#">Events</a></li>
         <li><a href="#">Gallery</a></li>
         <li><a href="#">Contact</a></li>
@@ -224,6 +226,8 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
     <br />
   <h1 class="Menu-P">Why Choose Our Restaurant </h1>
    </div>
+
+
    <br/>
    <div class="row">
      <div class="col">
@@ -246,6 +250,223 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
 </divition>
 
 
+<!--
+<divition class="Specials">
+
+
+    <div class="whysus-content">
+
+        <h1 class="Menuh1">SPECIALS</h1>
+        <div class="whyUs-line">
+
+
+      </div>
+      <br />
+    <h1 class="Menu-P">Check Our Specials</h1>
+     </div>
+<div class="row">
+  <div class="col">
+
+  </div>
+
+<div class="sp-container">
+  <div class="sp-content">
+    <div class="sp-list">
+      <label for="" class="sp-home">
+
+        <i class="fas fa-home"></i>
+      </label>
+    </div>
+  </div>
+</div>
+
+
+
+<!--
+
+  <div class="col-sm-11 col-md-4">
+    <ul class="sp-list">
+      <li class="sp-events"><a href="#" class="sp-events-a">Weddings</a></li>
+      <li class="sp-events"><a href="#" class="sp-events-a">Birthdays</a></li>
+      <li class="sp-events"><a href="#" class="sp-events-a">Events</a></li>
+      <li class="sp-events"><a href="#" class="sp-events-a">Partys</a></li>
+
+
+
+    </ul>
+    <div class="Sp-line">
+
+    </div>
+  </div>
+
+  <div class="col">
+
+  </div>
+  <div class="col-sm-11 col-md-6">
+
+  </div>
+</div>
+
+
+<!-- need update with database
+
+</divition>
+
+
+-->
+
+<divition class="events">
+
+    <div class="whysus-content">
+
+        <h1 class="Menuh1">Events</h1>
+        <div class="whyUs-line">
+
+
+      </div>
+      <br />
+    <h1 class="Menu-P">Organize Your Events with us.</h1>
+     </div>
+
+
+
+</divition>
+
+
+<divition class="Gallery">
+  <div class="whysus-content">
+
+      <h1 class="Menuh1">Gallery</h1>
+      <div class="whyUs-line">
+
+
+    </div>
+    <br />
+  <h1 class="Menu-P">Some photos from Our Bakery.</h1>
+   </div>
+   <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
+
+         <div class="row gallery-row">
+
+           <div class="col-lg-3 col-md-4 gallery-item-div">
+             <div class="gallery-item">
+
+                 <img src="assets/gallery/gallery-1.jpg" alt="" class="img-fluid">
+
+             </div>
+           </div>
+
+           <div class="col-lg-3 col-md-4 gallery-item-div">
+             <div class="gallery-item">
+
+                 <img src="assets/gallery/gallery-1.jpg" alt="" class="img-fluid">
+
+             </div>
+           </div>
+
+
+           <div class="col-lg-3 col-md-4 gallery-item-div">
+             <div class="gallery-item">
+
+                 <img src="assets/gallery/gallery-1.jpg" alt="" class="img-fluid">
+
+             </div>
+           </div>
+
+
+           <div class="col-lg-3 col-md-4 gallery-item-div">
+             <div class="gallery-item">
+
+                 <img src="assets/gallery/gallery-1.jpg" alt="" class="img-fluid">
+
+             </div>
+           </div>
+
+
+           <div class="col-lg-3 col-md-4 gallery-item-div">
+             <div class="gallery-item">
+
+                 <img src="assets/gallery/gallery-1.jpg" alt="" class="img-fluid">
+
+             </div>
+           </div>
+
+
+                      <div class="col-lg-3 col-md-4 gallery-item-div">
+                        <div class="gallery-item">
+
+                            <img src="assets/gallery/gallery-1.jpg" alt="" class="img-fluid">
+
+                        </div>
+                      </div>
+
+
+                                 <div class="col-lg-3 col-md-4 gallery-item-div">
+                                   <div class="gallery-item">
+
+                                       <img src="assets/gallery/gallery-1.jpg" alt="" class="img-fluid">
+
+                                   </div>
+                                 </div>
+
+
+                                            <div class="col-lg-3 col-md-4 gallery-item-div">
+                                              <div class="gallery-item">
+
+                                                  <img src="assets/gallery/gallery-1.jpg" alt="" class="img-fluid">
+
+                                              </div>
+                                            </div>
+
+
+
+
+
+         </div>
+
+       </div>
+
+
+</divition>
+
+<divition class="Contact">
+
+
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="info">
+        <div class="address">
+          <i class="bi bi-geo-alt"></i>
+          <h4>Location:</h4>
+          <p>
+            Q96C+WWW,Colombo-Batticaloa Hwy ,Kuruwita
+          </p>
+        </div>
+        <div class="open-hours">
+          <i class="bi bi-clock"></i>
+          <H4>Open Hours</H4>
+          <P>
+                              Monday-Saturday:
+                              <BR />
+                              7:00 am To 8:00 pm
+          </P>
+        </div>
+        <div class="email">
+          <i class="bi bi-envelope"></i>
+          <h4></h4>
+          <p>
+
+          </p>
+        </div>
+        <div class="email">
+
+        </div>
+      </div>
+
+
+
+
+    <div class="col-lg-8">
 
 
 
@@ -253,7 +474,10 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
 
 
 
+    </div>
+  </div>
 
+</divition>
 
 
 

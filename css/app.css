@@ -243,6 +243,29 @@ header.sticky nav ul li .logo {
   align-items: center;
   background: #1e1e1d; }
 
+.events {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  position: relative;
+  align-items: center;
+  background: #010103; }
+
+.Gallery {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  position: relative;
+  align-items: center;
+  background: #08080e; }
+
+.Contact {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  position: relative;
+  align-items: center; }
+
 .about-h1 {
   color: #d3ad7f;
   font-size: 2rem; }
@@ -335,9 +358,39 @@ header.sticky nav ul li .logo {
   color: #7E5936;
   font-size: 1.25rem; }
 
+.contact .info {
+  width: 100%; }
+
+.Contact .row .col-lg-4 .info i {
+  font-size: 20px;
+  float: left;
+  width: 44px;
+  height: 44px;
+  background: #cda45e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out; }
+.Contact .row .col-lg-4 .info h4 {
+  padding: 0 0 0 60px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  font-family: "Poppins", sans-serif; }
+.Contact .row .col-lg-4 .info p {
+  padding: 0 0 0 60px;
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #bab3a6; }
+
+.open-hours, .email, .phone {
+  margin-top: 40px; }
+
 .wy-us-row {
   padding-top: 70px;
-  margin-top: 70px; }
+  margin-top: 70px;
+  padding-bottom: 35px; }
 
 .whyus-div {
   width: 80%;
@@ -378,6 +431,35 @@ header.sticky nav ul li .logo {
       font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI"; }
     .menu-list .menu-item .menu-item-a:hover {
       color: #F5CB86; }
+
+.sp-list {
+  line-height: 10px; }
+  .sp-list .sp-events {
+    line-height: 10px;
+    padding: 20px; }
+    .sp-list .sp-events .sp-events-a {
+      font-size: 1rem;
+      text-decoration: none;
+      color: #FFFCFC;
+      margin: 20px;
+      padding: 20px; }
+    .sp-list .sp-events .sp-events-a:hover {
+      color: #7E5936; }
+
+.Sp-line {
+  background: #7E5936;
+  width: 4px;
+  height: 180px;
+  position: absolute;
+  top: 15px;
+  left: 300px; }
+
+.gallery-row {
+  margin-top: 150px; }
+  .gallery-row .gallery-item-div {
+    padding: 0;
+    transform: scale(1);
+    transition: 0.6s ease-in-out; }
 
 .btn-wishList {
   padding: 4px 30px;
@@ -627,6 +709,10 @@ a {
   .about-p {
     font-size: 1.25rem; } }
 @media screen and (max-width: 680px) {
+  .menu-item-a {
+    font-size: 0.75rem;
+    padding: 10px; } }
+@media screen and (max-width: 680px) {
   h1 {
     font-size: 23px; }
 
@@ -638,5 +724,18 @@ a {
     margin-top: 70px;
     padding-top: -30px;
     align-content: center; } }
+@media screen and (max-width: 680px) {
+  .menu-list {
+    margin: auto;
+    margin-left: -60px; }
+    .menu-list .menu-item .menu-item-a {
+      text-decoration: none;
+      font-size: 1rem;
+      color: #FFFCFC;
+      padding: 2px;
+      font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI"; }
+
+  .wy-us-row {
+    padding-bottom: 20px; } }
 
 /*# sourceMappingURL=app.css.map */

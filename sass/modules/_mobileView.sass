@@ -116,7 +116,10 @@ a
         font-size: $font-size-lg
 
 
-
+@media screen and (max-width:680px)
+  .menu-item-a
+    font-size: $font-size-s
+    padding: 10px
 
 
 
@@ -139,3 +142,27 @@ a
       margin-top: 70px
       padding-top: -30px
       align-content: center
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:680px)
+
+  .menu-list
+    margin: auto
+    margin-left: -60px
+    .menu-item
+      .menu-item-a
+        text-decoration: none
+        font-size: $font-size-m
+        color: $white
+        padding: 2px
+        font-family: $font-family-sans-serif
+
+  .wy-us-row
+    padding-bottom: 20px
