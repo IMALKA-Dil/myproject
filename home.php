@@ -8,11 +8,9 @@
     <link rel="stylesheet" type="text/css" href="B-css\bootstrap-grid.min.css">
 
       <link rel="stylesheet" type="text/css" href="B-css\bootstrap.min.css">
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
        <link rel="stylesheet" href="B-css/all.min.css">
        <link rel="stylesheet" href="B-css/bootstrap-icons/bootstrap-icons.css" />
-
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" type="text/css" href="css/app.css">
     <title>Cake n' Bake</title>
 </head>
@@ -433,7 +431,7 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
 
 
   <div class="row container aos-init aos-animate">
-    <div class="col-lg-4">
+    <div class="col-lg-4 col-info">
       <div class="info">
         <div class="address">
           <i class="bi bi-geo-alt"></i>
@@ -505,6 +503,88 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
 
 </divition>
 
+<footer id="footer">
+  <div class="footer-top">
+    <div class="footer-continer">
+      <div class="row">
+        <div class="col-1">
+
+        </div>
+        <div class-"col-lg-3 col-md-6">
+          <div class="footer-info">
+            <h3 class="footer-title">Cake'n Bake</h3>
+            <p class="footer-paragraph">
+              Q96C+WWW,
+              <br />Colombo-Batticaloa Hwy ,
+              <br />Kuruwita
+              <br />
+              <br />
+              phone: 07071563313<br />
+              Email:cakeNbakeKURUWITA@gmail.com
+
+
+            </p>
+            <div class="social-links mt-3">
+                <a href="#" class="footer-links twitter"><i class="fa fa-twitter"></i></a>
+                <a href="#" class="footer-links facebook"><i class="fa fa-facebook"></i></a>
+                <a href="#" class="footer-links instagram"><i class="fa fa-instagram"></i></a>
+                <a href="#" class="footer-links whatsapp"><i class="fa fa-whatsapp"></i></a>
+              </div>
+          </div>
+        </div>
+        <div class="col">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+<div class="row">
+  <div class="col">
+
+  </div>
+  <div class="col-lg-3 col-md-6">
+    <div class="designer-info">
+      <h3 class="designer-name">Imalka .</h3>
+<div class="row">
+
+<div class="col">
+
+</div>
+      <div class="social-links mt-3">
+          <a href="#" class="footer-links-designer twitter"><i class="fa fa-twitter"></i></a>
+          <a href="#" class="footer-links-designer facebook"><i class="fa fa-facebook"></i></a>
+          <a href="#" class="footer-links-designer instagram"><i class="fa fa-instagram"></i></a>
+          <a href="#" class="footer-links-designer whatsapp"><i class="fa fa-linkedin"></i></a>
+        </div>
+        <div class="col">
+
+        </div>
+      </div>
+        <br />
+        <div class="row">
+          <div class="col">
+
+          </div><div class="mt-3">
+            <p class="copyright-paragraph">
+                    ©2022 Copyright all right reserved
+
+            </p>
+          </div><div class="col">
+
+          </div>
+        </div>
+
+    </div>
+  </div>
+  <div class="col">
+
+  </div>
+  </div>
+
+</div>
+  </div>
+</footer>
 
 
 
