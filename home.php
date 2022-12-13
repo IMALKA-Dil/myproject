@@ -15,6 +15,9 @@
       <script src="https://unpkg.com/scrollreveal"></script>
     <title>Cake n' Bake</title>
 </head>
+<body id="home-body">
+
+
 <divition class="home">
 
   <header>
@@ -30,6 +33,7 @@
         <li><a href="#">Events</a></li>
         <li><a href="#">Gallery</a></li>
         <li><a href="#">Contact</a></li>
+          <li><a href="#">Account</a></li>
         <li><a href="#" class="btn-wishList">WishList</a></li>
 
        <li class="dropDownIcon"><a href="javascript:void(0);" onclick="dropDownMenu()"><div class="menu-btn">

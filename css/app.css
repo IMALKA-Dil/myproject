@@ -17,11 +17,14 @@ footer {
 * {
   font-family: "Poppins", sans-serif; }
 
-body {
+.home-body {
   margin: 0;
   line-height: 1;
   background: #010103;
   min-height: 200vh; }
+
+.body {
+  background: #FFFCFC; }
 
 .row {
   display: flex;
@@ -264,7 +267,11 @@ header.sticky nav ul li .logo {
   min-height: 100vh;
   display: flex;
   position: relative;
-  align-items: center; }
+  align-items: center;
+  /*login page */ }
+
+.body {
+  background-color: #FFFCFC; }
 
 .about-h1 {
   color: #d3ad7f;
@@ -599,6 +606,18 @@ a.footer-links-designer:hover {
   left: 0;
   right: 0; }
 
+.message {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: 10px;
+  background-color: #05cd8c;
+  text-align: center;
+  z-index: 1000;
+  box-shadow: var(--box-shadow);
+  color: #FFFCFC;
+  font-size: 22px;
+  font-family: "Roboto Slab", serif; }
+
 .btn-wishList {
   padding: 4px 30px;
   border-radius: 15px;
@@ -834,13 +853,13 @@ a {
     transition: 0.7s; } }
 @media screen and (max-width: 680px) {
   .bake {
-    font-size: 30px; }
+    font-size: 25px; }
 
   .cake {
-    font-size: 30px; }
+    font-size: 25px; }
 
   .lead {
-    font-size: 24px; } }
+    font-size: 22px; } }
 @media screen and (max-width: 680px) {
   .col-img {
     width: 300px;
