@@ -12,6 +12,7 @@
        <link rel="stylesheet" href="B-css/bootstrap-icons/bootstrap-icons.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" type="text/css" href="css/app.css">
+      <script src="https://unpkg.com/scrollreveal"></script>
     <title>Cake n' Bake</title>
 </head>
 <divition class="home">
@@ -94,7 +95,7 @@
     <div class="col">
 
     </div>
-    <div class="col-sm-12 col-md-5">
+    <div class="col-sm-12 col-md-5 col-details">
 
       <h1 class="abouth1">
 
@@ -144,7 +145,7 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
 
 <divition class="whyus">
 
-<div class="whysus-content">
+<div class="whysus-content scrollrel-title">
 
     <h1 class="whyush1">Why Us</h1>
     <div class="whyUs-line">
@@ -152,7 +153,7 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
 
   </div>
   <br />
-<h1 class="wychose">Why Choose Our Restaurant </h1>
+<h1 class="wychose scrollrel-h1">Why Choose Our Bakery </h1>
  </div>
  <br />
  <br />
@@ -160,7 +161,7 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
 
   <div class="row wy-us-row">
 
-    <div class=" col-sm-12 col-lg-4 ">
+    <div class=" col-sm-12 col-lg-4 whyUs-title1">
       <div class="img-fluid size-img whyus-div">
         <div class="whyus-content">
           <h1 class="whyus-h1-nomber">01</h1>
@@ -178,7 +179,7 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
 
 
 
-        <div class=" col-sm-12 col-lg-4 ">
+        <div class=" col-sm-12 col-lg-4 whyUs-title2">
           <div class="img-fluid size-img whyus-div">
             <div class="whyus-content">
               <h1 class="whyus-h1-nomber">02</h1>
@@ -193,7 +194,7 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
         </div>
 
 
-            <div class=" col-sm-12 col-lg-4 ">
+            <div class=" col-sm-12 col-lg-4 whyUs-title3">
               <div class="img-fluid size-img whyus-div">
                 <div class="whyus-content">
                   <h1 class="whyus-h1-nomber">03</h1>
@@ -212,7 +213,7 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
 
 
 
-<divition class="Menu">
+<divition class="Menu scrollrel-title">
 
   <div class="whysus-content">
 
@@ -222,7 +223,7 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
 
     </div>
     <br />
-  <h1 class="Menu-P">Why Choose Our Restaurant </h1>
+  <h1 class="Menu-P scrollrel-h1">Why Choose Our Bakerya </h1>
    </div>
 
 
@@ -317,13 +318,13 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
 
     <div class="whysus-content">
 
-        <h1 class="Menuh1">Events</h1>
+        <h1 class="Menuh1 scrollrel-title">Events</h1>
         <div class="whyUs-line">
 
 
       </div>
       <br />
-    <h1 class="Menu-P">Organize Your Events with us.</h1>
+    <h1 class="Menu-P scrollrel-h1">Organize Your Events with us.</h1>
      </div>
 
 
@@ -334,19 +335,19 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
 <divition class="Gallery">
   <div class="whysus-content">
 
-      <h1 class="Menuh1">Gallery</h1>
+      <h1 class="Menuh1 scrollrel-title">Gallery</h1>
       <div class="whyUs-line">
 
 
     </div>
     <br />
-  <h1 class="Menu-P">Some photos from Our Bakery.</h1>
+  <h1 class="Menu-P scrollrel-h1">Some photos from Our Bakery.</h1>
    </div>
    <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
 
          <div class="row gallery-row">
 
-           <div class="col-lg-3 col-md-4 gallery-item-div">
+           <div class="col-lg-3 col-md-4 gallery-item-div gallery-item-div1">
              <div class="gallery-item">
 
                  <img src="assets/gallery/gallery-1.jpg" alt="" class="img-fluid">
@@ -354,16 +355,7 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
              </div>
            </div>
 
-           <div class="col-lg-3 col-md-4 gallery-item-div">
-             <div class="gallery-item">
-
-                 <img src="assets/gallery/gallery-1.jpg" alt="" class="img-fluid">
-
-             </div>
-           </div>
-
-
-           <div class="col-lg-3 col-md-4 gallery-item-div">
+           <div class="col-lg-3 col-md-4 gallery-item-div gallery-item-div2">
              <div class="gallery-item">
 
                  <img src="assets/gallery/gallery-1.jpg" alt="" class="img-fluid">
@@ -372,7 +364,7 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
            </div>
 
 
-           <div class="col-lg-3 col-md-4 gallery-item-div">
+           <div class="col-lg-3 col-md-4 gallery-item-div gallery-item-div3">
              <div class="gallery-item">
 
                  <img src="assets/gallery/gallery-1.jpg" alt="" class="img-fluid">
@@ -381,7 +373,7 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
            </div>
 
 
-           <div class="col-lg-3 col-md-4 gallery-item-div">
+           <div class="col-lg-3 col-md-4 gallery-item-div gallery-item-div4">
              <div class="gallery-item">
 
                  <img src="assets/gallery/gallery-1.jpg" alt="" class="img-fluid">
@@ -390,7 +382,16 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
            </div>
 
 
-                      <div class="col-lg-3 col-md-4 gallery-item-div">
+           <div class="col-lg-3 col-md-4 gallery-item-div gallery-item-div5">
+             <div class="gallery-item">
+
+                 <img src="assets/gallery/gallery-1.jpg" alt="" class="img-fluid">
+
+             </div>
+           </div>
+
+
+                      <div class="col-lg-3 col-md-4 gallery-item-div gallery-item-div6">
                         <div class="gallery-item">
 
                             <img src="assets/gallery/gallery-1.jpg" alt="" class="img-fluid">
@@ -399,7 +400,7 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
                       </div>
 
 
-                                 <div class="col-lg-3 col-md-4 gallery-item-div">
+                                 <div class="col-lg-3 col-md-4 gallery-item-div gallery-item-div7">
                                    <div class="gallery-item">
 
                                        <img src="assets/gallery/gallery-1.jpg" alt="" class="img-fluid">
@@ -408,7 +409,7 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
                                  </div>
 
 
-                                            <div class="col-lg-3 col-md-4 gallery-item-div">
+                                            <div class="col-lg-3 col-md-4 gallery-item-div gallery-item-div8">
                                               <div class="gallery-item">
 
                                                   <img src="assets/gallery/gallery-1.jpg" alt="" class="img-fluid">
@@ -512,7 +513,7 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
         </div>
         <div class-"col-lg-3 col-md-6">
           <div class="footer-info">
-            <h3 class="footer-title">Cake'n Bake</h3>
+            <h3 class="footer-title">Cake n' Bake</h3>
             <p class="footer-paragraph">
               Q96C+WWW,
               <br />Colombo-Batticaloa Hwy ,
@@ -592,6 +593,43 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
 
 
 <script src="app.js">
+</script>
+<script>
+
+ScrollReveal({
+   reset: true,
+   distance: '60px',
+   duration: 2500,
+   delay: 400
+ });
+
+ ScrollReveal().reveal('.display-3,.lead', { delay: 400 });
+ ScrollReveal().reveal('.scrollrel-title,.scrollrel-h1,.whyUs-line',{delay: 300 , origin: 'left'})
+ ScrollReveal().reveal('.col-img',{delay: 800, origin: 'left'});
+ ScrollReveal().reveal('.col-details',{delay: 600, origin: 'bottom'})
+
+ ScrollReveal().reveal('.gallery-item-div1',{delay:400, origin: 'left'})
+  ScrollReveal().reveal('.gallery-item-div2',{delay:450, origin: 'left'})
+   ScrollReveal().reveal('.gallery-item-div3',{delay:500, origin: 'left'})
+    ScrollReveal().reveal('.gallery-item-div4',{delay:550, origin: 'left'})
+     ScrollReveal().reveal('.gallery-item-div5',{delay:600, origin: 'left'})
+      ScrollReveal().reveal('.gallery-item-div6',{delay:650, origin: 'left'})
+       ScrollReveal().reveal('.gallery-item-div7',{delay:700, origin: 'left'})
+        ScrollReveal().reveal('.gallery-item-div8',{delay:750, origin: 'left'})
+
+
+     ScrollReveal().reveal('.col-info',{delay:600, origin: 'left'})
+      ScrollReveal().reveal('.form-inputs',{delay:1000, origin: 'bottom'})
+       ScrollReveal().reveal('.footer-paragraph',{delay:500, origin: 'left'})
+
+       ScrollReveal().reveal('.whyUs-title1',{delay:450,origin: 'bottom'})
+       ScrollReveal().reveal('.whyUs-title2',{delay:650,origin: 'bottom'})
+       ScrollReveal().reveal('.whyUs-title3',{delay:850,origin: 'bottom'})
+
+        ScrollReveal().reveal('.twitter',{delay:400, origin: 'bottom'})
+         ScrollReveal().reveal('.facebook',{delay:450, origin: 'bottom'})
+          ScrollReveal().reveal('.instagram',{delay:500, origin: 'bottom'})
+           ScrollReveal().reveal('.whatsapp',{delay:550, origin: 'bottom'})
 </script>
 </body>
 </html>
