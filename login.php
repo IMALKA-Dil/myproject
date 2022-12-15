@@ -1,3 +1,24 @@
+<?php
+include 'config.php';
+if(isset($_POST['submit'])){
+$name= mysqli_real_escape_string($conn,$_POST['name']);
+$password= mysqli_real_escape_string($conn,$_POST['password']);
+$select= mysqli_query($conn,"select * from `user` where name='$name' and password='$password'") or die ('query failed');
+
+if (mysqli_num_rows($select)> 0) {
+  $row = mysqli_fetch_assoc($select);
+  $_SESSION['user_id'] = $row['userid'];
+  header('location:home.php');
+
+}
+else{
+  $message[] ='incorrect password or user name';
+}
+}
+
+
+?>
+
 <!DOCTYPE html>
 
 <!--
@@ -13,7 +34,7 @@
   <!-- Basic Page Needs
   ================================================== -->
   <meta charset="utf-8">
-  <title>Aviato | E-commerce template</title>
+  <title>Cake n' Bake</title>
 
   <!-- Mobile Specific Metas
   ================================================== -->
@@ -45,6 +66,24 @@
 <body id="body">
 
 <section class="signin-page account">
+
+    <?php
+      if(isset($message)){
+        foreach ($message as $message) {
+          echo '<div class="row">
+          <div class="col">
+
+          </div>
+          <div class="message col-md-6 col-md-offset-3 onclick="this.remove();">'
+          .$message.'
+          </div>
+          <div class="col"
+          </div></div>'
+          ;
+        }
+      }
+
+    ?>
   <div class="container">
     <div class="row">
       <div class="col">
@@ -56,9 +95,9 @@
             <img src="images/logo.png" alt="">
           </a>
           <h2 class="text-center">Welcome Back</h2>
-          <form class="text-left clearfix" action="home.php" method="post" >
+          <form class="text-left clearfix" action="" method="post" >
             <div class="form-group">
-              <input type="email" class="form-control"  placeholder="Email" name="email" id="email">
+              <input type="text" class="form-control"  placeholder="Name" name="name" id="name">
             </div>
             <div class="form-group">
               <input type="password" class="form-control" placeholder="Password" name="password" id="password">

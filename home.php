@@ -1,3 +1,66 @@
+<?php
+
+include 'config.php';
+if(isset($_POST['submit'])){
+$name= mysqli_real_escape_string($conn,$_POST['name']);
+$password= mysqli_real_escape_string($conn,$_POST['password']);
+$select= mysqli_query($conn,"select * from `user` where name='$name' and password='$password'") or die ('query failed');
+
+if (mysqli_num_rows($select)> 0) {
+  $row = mysqli_fetch_assoc($select);
+  $_SESSION['user_id'] = $row['userid'];
+  header('location:cart.php');
+
+}
+else{
+  $message[] ='incorrect password or user name';
+}
+}
+
+
+if(isset($_POST['signin'])){
+
+   $name = mysqli_real_escape_string($conn, $_POST['name']);
+   $email = mysqli_real_escape_string($conn, $_POST['email']);
+   $pass = mysqli_real_escape_string($conn, $_POST['password']);
+   $mobile = mysqli_real_escape_string($conn,$_POST['mobile']);
+
+
+   $select = mysqli_query($conn, "SELECT * FROM `user` WHERE email = '$email' AND password = '$pass'") or die('query failed');
+
+   if(mysqli_num_rows($select) > 0){
+      $message[] = 'user already exist!';
+   }else{
+      mysqli_query($conn, "INSERT INTO `user` (name, password, email,mobile_number) VALUES('$name','$pass','$email', '$mobile')") or die('query failed');
+      $message[] = 'registered successfully!';
+
+   }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//include 'config.php';
+//session_start();
+//$user_id= $_SESSION['user_id'];
+
+//if(!isset($user_id))
+    //header('location:login.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,15 +89,35 @@
     <nav>
       <ul class="topnav" id="dropDownClick">
         <li class="logo"><span class="cake">Cake n'</span> <span class="bake">Bake</span></li>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Menu</a></li>
+        <li><a href="#"  onclick="closeDropDownMenu();">Home</a></li>
+        <li><a href="#"  onclick="closeDropDownMenu();">About</a></li>
+        <li><a href="#"  onclick="closeDropDownMenu();">Menu</a></li>
       <!--  <li><a href="#">Specials</a></li> -->
-        <li><a href="#">Events</a></li>
-        <li><a href="#">Gallery</a></li>
-        <li><a href="#">Contact</a></li>
-          <li><a href="#">Account</a></li>
-        <li><a href="#" class="btn-wishList">WishList</a></li>
+        <li><a href="#"  onclick="closeDropDownMenu();">Events</a></li>
+        <li><a href="#"  onclick="closeDropDownMenu();">Gallery</a></li>
+        <li><a href="#"  onclick="closeDropDownMenu();">Contact</a></li>
+          <li>
+
+
+
+  <a href="" class="model-btn" data-toggle="modal" data-target="#exampleModal" onclick="closeDropDownMenu();">Account</a>
+
+
+
+
+
+
+
+        <li>
+          <a class="btn-wishList" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         WishList
+       </a>
+       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+         <a class="dropdown-item" href="#">Pants</a>
+         <a class="dropdown-item" href="#">Shirts</a>
+         <a class="dropdown-item" href="#">Apparel</a>
+       </div>
+        </li>
 
        <li class="dropDownIcon"><a href="javascript:void(0);" onclick="dropDownMenu()"><div class="menu-btn">
     <div class="menu-btn__burger"></div>
@@ -47,6 +130,121 @@
 
 
   </header>
+
+
+  <!-- Models -->
+
+
+
+  <!-- Button trigger modal -->
+
+
+  <!-- Modal -->
+
+
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h1 class="modal-h1">WELCOME BACK</h1>
+          <form>
+        <div class="form-group">
+
+          <input   type="text" class="form-control"  placeholder="Name" name="name" id="name" id="exampleInputEmail1" aria-describedby="nameHelp" >
+
+        </div>
+        <div>
+
+          <br />
+        </div>
+        <div class="form-group">
+
+          <input type="password" class="form-control" name="password" id="password" id="exampleInputPassword1" placeholder="Password">
+        </div>
+
+        <div class="text-center">
+          <input type="submit" class="btn btn-main text-center" name="submit" id="submit" value="submit"/>
+        </div>
+      </form>
+                <p class="mt-20 modal-p">New in this site ?  <a href=""  data-toggle="modal" data-target="#exampleModal1">Create New Account</a>
+</p>
+        </div>
+        <div class="modal-footer">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Sign In</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h2 class="modal-h1">Create Your Account</h2>
+
+              <?php
+                if(isset($message)){
+                  foreach ($message as $message) {
+
+
+             echo '<div class="message" onclick="this.remove();">'.$message.'</div>';
+
+
+                  }
+                }
+
+              ?>
+            <form class="text-left clearfix" action="" method="post">
+              <div class="form-group">
+                <input type="text" class="form-control"  placeholder=" Name" id="exampleInputEmail1" id="name" name='name'>
+              </div>
+
+              <div class="form-group">
+                <input type="email" class="form-control"  placeholder="Email" id="exampleInputEmail1" id='email' name="email">
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control"  placeholder="Password" id='password'  id="exampleInputPassword1" name='password'>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control"  placeholder="Mobile Number" id="exampleInputEmail1" id='mobile' name='mobile'>
+              </div>
+              <div class="text-center">
+                <input type="submit" value="Sign In" name="signin"  id="signin" class="btn btn-main text-center"    data-toggle="modal" data-target="#exampleModal" data-dismiss="modal" data-toggle="modal"
+
+
+                 />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
   <div class="jumbotron jubmotron-fluid">
 
        <div class='container'>
@@ -596,6 +794,36 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
 
 
 
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <script src="app.js">
 </script>
 <script>
@@ -635,5 +863,11 @@ ScrollReveal({
           ScrollReveal().reveal('.instagram',{delay:500, origin: 'bottom'})
            ScrollReveal().reveal('.whatsapp',{delay:550, origin: 'bottom'})
 </script>
+
+<!--Bootstrap js files-->
+<!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

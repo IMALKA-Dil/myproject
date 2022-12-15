@@ -7,6 +7,12 @@ function dropDownMenu(){
                x.className ="topnav";
            }
        }
+
+function closeDropDownMenu(){
+  var x = document.getElementById("dropDownClick");
+    x.className="topnav";
+
+}
 window.addEventListener("scroll", function(){
     var header= document.querySelector("header");
     header.classList.toggle("sticky",window.scrollY > 0);

@@ -1,24 +1,29 @@
 <?php
+
 include 'config.php';
+
 if(isset($_POST['submit'])){
-$name= mysqli_real_escape_string($conn,$_POST['name']);
-$email= mysqli_real_escape_string($conn,$_POST['email']);
-$password= mysqli_real_escape_string($conn,$_POST['password']);
-$mobile= mysqli_real_escape_string($conn,$_POST['mobile']);
-$select= mysqli_query($conn,"select * from `user` where email='$email' and password='$password'") or die ('query failed');
 
-if (mysqli_num_rows($select)> 0) {
-  $message[] ='user Already exist';
-}
-else{
-  mysqli_query($conn,"insert into `user`(name,password,email,mobile_number) values('$name','$password','$email','$mobile')") or die ('query failed');
-  $message[] ='Registed Successfuly ';
-  header('location:login.php');
-}
-}
+   $name = mysqli_real_escape_string($conn, $_POST['name']);
+   $email = mysqli_real_escape_string($conn, $_POST['email']);
+   $pass = mysqli_real_escape_string($conn, $_POST['password']);
+   $mobile = mysqli_real_escape_string($conn,$_POST['mobile']);
 
+
+   $select = mysqli_query($conn, "SELECT * FROM `user` WHERE email = '$email' AND password = '$pass'") or die('query failed');
+
+   if(mysqli_num_rows($select) > 0){
+      $message[] = 'user already exist!';
+   }else{
+      mysqli_query($conn, "INSERT INTO `user` (name, password, email,mobile_number) VALUES('$name','$pass','$email', '$mobile')") or die('query failed');
+      $message[] = 'registered successfully!';
+
+   }
+
+}
 
 ?>
+
 
 
 <!DOCTYPE html>
@@ -36,7 +41,7 @@ else{
   <!-- Basic Page Needs
   ================================================== -->
   <meta charset="utf-8">
-  <title>Aviato | E-commerce template</title>
+  <title>Cake n' Bake</title>
 
   <!-- Mobile Specific Metas
   ================================================== -->
@@ -67,31 +72,32 @@ else{
 
 <body id="body">
 
-<section class="signin-page account">
-
   <?php
     if(isset($message)){
       foreach ($message as $message) {
-        echo '<div class="row">
+
+/*
+        '<div class="row">
         <div class="col">
 
         </div>
-        <div class="message col-md-6 col-md-offset-3 onclick="this.remove();">'
-        .$message.'
-        </div>
+        <div class="message col-md-6 col-md-offset-3  onclick="this.remove();">'
+        .$message.
+      '</div>
         <div class="col"
-        </div></div>'
-        ;
+        </div>';
+*/
+ echo '<div class="message" onclick="this.remove();">'.$message.'</div>';
+
+
       }
     }
 
   ?>
+<section class="signin-page account">
+
   <div class="container">
-
     <div class="row">
-      <div class="col">
-
-      </div>
 
       <div class="col-md-6 col-md-offset-3">
         <div class="block text-center">
@@ -114,16 +120,14 @@ else{
               <input type="text" class="form-control"  placeholder="Mobile Number" id='mobile' name='mobile'>
             </div>
             <div class="text-center">
-              <input type="submit" value="Sign In" name"submit" class="btn btn-main text-center" />
+              <input type="submit" value="Sign In" name="submit"  id="submit" class="btn btn-main text-center" />
             </div>
           </form>
-          <p class="mt-20">Already hava an account ?<a href="login.php"> Login</a></p>
+          <p class="mt-20">Already have an account ?<a href="login.php"> Login</a></p>
 
         </div>
       </div>
-      <div class="col">
 
-      </div>
     </div>
   </div>
 </section>

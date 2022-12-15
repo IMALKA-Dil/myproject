@@ -17,12 +17,6 @@ footer {
 * {
   font-family: "Poppins", sans-serif; }
 
-.home-body {
-  margin: 0;
-  line-height: 1;
-  background: #010103;
-  min-height: 200vh; }
-
 .body {
   background: #FFFCFC; }
 
@@ -160,6 +154,27 @@ header.sticky nav ul {
 header.sticky nav ul li .logo {
   display: none; }
 
+header.cart-header {
+  border-bottom: 1px solid #1e1e1d;
+  position: relative; }
+
+.cart-h1-desc {
+  font-size: 30px;
+  color: #d3ad7f;
+  font-weight: 200;
+  margin: 15px 0 15px 0; }
+
+.cart-span-home {
+  font-size: 12px;
+  color: #b9865b;
+  cursor: pointer;
+  font-weight: 200; }
+
+.cart-span-wishList {
+  font-size: 12px;
+  color: #F5CB86;
+  font-weight: 200; }
+
 .home {
   width: 100%;
   min-height: 100vh;
@@ -168,6 +183,9 @@ header.sticky nav ul li .logo {
   background: url(../bakeAssets/bg.jpg) no-repeat;
   background-size: cover;
   background-position: center; }
+
+divition {
+  min-height: 100vh; }
 
 .bake {
   color: #7E5936;
@@ -272,6 +290,12 @@ header.sticky nav ul li .logo {
 
 .body {
   background-color: #FFFCFC; }
+
+body {
+  margin: 0;
+  line-height: 1;
+  background: #010103;
+  min-height: 200vh; }
 
 .about-h1 {
   color: #d3ad7f;
@@ -618,6 +642,35 @@ a.footer-links-designer:hover {
   font-size: 22px;
   font-family: "Roboto Slab", serif; }
 
+.modal-content {
+  background: #13131a;
+  border-radius: 0px; }
+  .modal-content .modal-header .modal-title {
+    color: #d3ad7f; }
+  .modal-content .modal-header button {
+    color: #7E5936; }
+  .modal-content .modal-header {
+    border-bottom: 1px solid #7E5936; }
+  .modal-content .modal-body form {
+    margin-top: 20px; }
+  .modal-content .modal-body .modal-h1 {
+    color: #7E5936;
+    text-align: center;
+    font-size: 25px; }
+
+.form-control {
+  background-color: #13131a;
+  color: #7E5936;
+  border-radius: 0px;
+  border: 1px solid #7E5936; }
+
+.modal-p {
+  margin-top: 20px;
+  color: #7E5936; }
+
+.modal-footer {
+  border-top: 1px solid #7E5936; }
+
 .btn-wishList {
   padding: 4px 30px;
   border-radius: 15px;
@@ -679,6 +732,13 @@ a.footer-links-designer:hover {
   width: 20px;
   transform: translateY(0px) rotate(315deg); }
 
+.model-btn:hover {
+  letter-spacing: 4px;
+  font-size: 22px;
+  transition: 0.3s;
+  color: #7E5936;
+  transition: -10px; }
+
 header.sticky nav ul li.dropDownIcon a div.bars div.bar {
   background: #b9865b; }
 
@@ -738,6 +798,19 @@ header.sticky nav ul li.dropDownIcon a div.bars div.bar {
   color: #fff;
   transition: 0.4s;
   border-radius: 50px;
+  cursor: pointer; }
+
+.btn-main {
+  display: block;
+  background: #000;
+  color: #fff;
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding: 14px 35px;
+  text-transform: uppercase;
+  font-weight: 200;
+  border-radius: 0;
   cursor: pointer; }
 
 .b-video-img {
@@ -911,5 +984,13 @@ a {
 
   .col-info {
     margin-top: 20px; } }
+body {
+  margin: 0;
+  line-height: 1;
+  background: #010103;
+  min-height: 200vh; }
+
+.modal-dialog {
+  margin-top: 100px; }
 
 /*# sourceMappingURL=app.css.map */
