@@ -291,6 +291,13 @@ divition {
 .body {
   background-color: #FFFCFC; }
 
+.cart-divitsion {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  position: relative;
+  align-items: center; }
+
 body {
   margin: 0;
   line-height: 1;

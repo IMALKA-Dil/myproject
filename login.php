@@ -1,5 +1,17 @@
 <?php
 include 'config.php';
+session_start();
+$user_id = $_SESSION['user_Id'];
+
+if(!isset($user_id)){
+   
+    echo"$user_id";
+ }
+ ?>
+
+
+<?php
+include 'config.php';
 if(isset($_POST['submit'])){
 $name= mysqli_real_escape_string($conn,$_POST['name']);
 $password= mysqli_real_escape_string($conn,$_POST['password']);

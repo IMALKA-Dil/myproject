@@ -1,3 +1,15 @@
+<?php
+session_start();
+include 'config.php';
+
+$user_id = $_SESSION['user_id'];
+
+if(!isset($user_id)){
+   header('location:login.php');
+   echo"<h1 style='color:red'>$user_id</h1>";
+};
+ ?>
+
 <!doctype html>
 
 
@@ -33,7 +45,8 @@
 
     </div>
   </header>
-  <divition>
+  <divition class="cart-divitsion">
+
     <div class="row">
       <div class="col-1">
 
@@ -55,7 +68,11 @@
 
   </divition>
 
+<?php
+echo"<h1 style='color:red'>$user_id</h1>";
 
+
+?>
   <footer id="footer">
     <div class="footer-top">
       <div class="footer-continer">

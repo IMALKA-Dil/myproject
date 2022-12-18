@@ -1,22 +1,20 @@
 <?php
-
+session_start();
 include 'config.php';
-if(isset($_POST['submit'])){
+if(isset($_POST['login'])){
 $name= mysqli_real_escape_string($conn,$_POST['name']);
 $password= mysqli_real_escape_string($conn,$_POST['password']);
 $select= mysqli_query($conn,"select * from `user` where name='$name' and password='$password'") or die ('query failed');
 
-if (mysqli_num_rows($select)> 0) {
-  $row = mysqli_fetch_assoc($select);
-  $_SESSION['user_id'] = $row['userid'];
-  header('location:cart.php');
-
+if(mysqli_num_rows($select) > 0){
+      $row = mysqli_fetch_assoc($select);
+      $_SESSION['user_id'] = $row['userId'];
+      header('location:cart.php');
+  //    echo($_SESSION);
+   }else{
+      $message[] = 'incorrect password or email!';
+   }
 }
-else{
-  $message[] ='incorrect password or user name';
-}
-}
-
 
 if(isset($_POST['signin'])){
 
@@ -154,7 +152,7 @@ if(isset($_POST['signin'])){
         </div>
         <div class="modal-body">
           <h1 class="modal-h1">WELCOME BACK</h1>
-          <form>
+          <form action="" method="post">
         <div class="form-group">
 
           <input   type="text" class="form-control"  placeholder="Name" name="name" id="name" id="exampleInputEmail1" aria-describedby="nameHelp" >
@@ -170,7 +168,7 @@ if(isset($_POST['signin'])){
         </div>
 
         <div class="text-center">
-          <input type="submit" class="btn btn-main text-center" name="submit" id="submit" value="submit"/>
+          <input type="submit" class="btn btn-main text-center" name="login" id="login" value="login"/>
         </div>
       </form>
                 <p class="mt-20 modal-p">New in this site ?  <a href=""  data-toggle="modal" data-target="#exampleModal1">Create New Account</a>
