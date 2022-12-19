@@ -70,6 +70,16 @@ footer {
 * {
   box-sizing: border-box; }
 
+.row-menu {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0; }
+
 nav,
 header,
 footer {
@@ -564,6 +574,24 @@ a.footer-links-designer:hover {
 .col-info {
   margin-top: -57px; }
 
+.div-menu-row {
+  width: 100%; }
+
+.whys-us-row {
+  width: 1140px;
+  height: 100px; }
+
+.div-menu {
+  width: 80%;
+  height: 320px;
+  background: #13131a;
+  margin-top: 70px;
+  transition: 1.8s;
+  opacity: 1;
+  transform: translateZ(0) scale(1);
+  margin: auto;
+  background-color: #000000; }
+
 .form-inputs {
   margin-top: 20px;
   margin-bottom: 20px; }
@@ -820,6 +848,30 @@ header.sticky nav ul li.dropDownIcon a div.bars div.bar {
   border-radius: 0;
   cursor: pointer; }
 
+.cart-span-home {
+  text-decoration: none; }
+
+a.cart-span-home:hover {
+  color: #FFFCFC;
+  text-decoration: none; }
+
+.btn-addtocart {
+  padding: 10px 30px;
+  font-size: 15px;
+  font-weight: 100;
+  text-decoration: none;
+  background: none;
+  color: #F5CB86;
+  border: 1px solid #d3ad7f;
+  margin-bottom: 10px;
+  margin-left: 80px; }
+
+.btn-addtocart:hover {
+  background: #d3ad7f;
+  color: #FFFCFC;
+  border: 1px solid #d3ad7f;
+  text-decoration: none; }
+
 .b-video-img {
   width: 100%;
   padding: 20px 0 30px; }
@@ -843,6 +895,18 @@ header.sticky nav ul li.dropDownIcon a div.bars div.bar {
   width: 400px;
   height: 370px;
   transition: 0.7s; }
+
+.menu-item-images {
+  align-items: center;
+  margin-left: 75px; }
+
+.menu-item-h1 {
+  text-align: center;
+  color: #FFFCFC; }
+
+.menu-item-p1 {
+  text-align: center;
+  color: #FFFCFC; }
 
 .img-list {
   margin: 0 -20px -40px;
@@ -999,5 +1063,12 @@ body {
 
 .modal-dialog {
   margin-top: 100px; }
+
+@media screen and (max-width: 680px) {
+  .col-cust-responsive {
+    width: 100%; }
+
+  .btn-addtocart {
+    margin-left: 100px; } }
 
 /*# sourceMappingURL=app.css.map */

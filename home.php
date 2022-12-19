@@ -27,19 +27,14 @@ if(isset($_POST['signin'])){
    $select = mysqli_query($conn, "SELECT * FROM `user` WHERE email = '$email' AND password = '$pass'") or die('query failed');
 
    if(mysqli_num_rows($select) > 0){
-      $message[] = 'user already exist!';
+      $message_signin[] = 'user already exist!';
    }else{
       mysqli_query($conn, "INSERT INTO `user` (name, password, email,mobile_number) VALUES('$name','$pass','$email', '$mobile')") or die('query failed');
-      $message[] = 'registered successfully!';
+      $message_signin[] = 'registered successfully!';
 
    }
 
 }
-
-
-
-
-
 
 
 
@@ -106,15 +101,12 @@ if(isset($_POST['signin'])){
 
 
 
+
         <li>
-          <a class="btn-wishList" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="btn-wishList" href="cart.php" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          WishList
        </a>
-       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-         <a class="dropdown-item" href="#">Pants</a>
-         <a class="dropdown-item" href="#">Shirts</a>
-         <a class="dropdown-item" href="#">Apparel</a>
-       </div>
+
         </li>
 
        <li class="dropDownIcon"><a href="javascript:void(0);" onclick="dropDownMenu()"><div class="menu-btn">
@@ -152,6 +144,21 @@ if(isset($_POST['signin'])){
         </div>
         <div class="modal-body">
           <h1 class="modal-h1">WELCOME BACK</h1>
+
+          <?php
+
+
+            if(isset($message)){
+              foreach ($message as $message) {
+
+
+         echo '<div class="message" onclick="this.remove();">'.$message.'</div>';
+
+
+              }
+            }
+
+          ?>
           <form action="" method="post">
         <div class="form-group">
 
@@ -198,11 +205,11 @@ if(isset($_POST['signin'])){
             <h2 class="modal-h1">Create Your Account</h2>
 
               <?php
-                if(isset($message)){
-                  foreach ($message as $message) {
+                if(isset($message_signin)){
+                  foreach ($message_signin as $message_signin) {
 
 
-             echo '<div class="message" onclick="this.remove();">'.$message.'</div>';
+             echo '<div class="message" onclick="this.remove();">'.$message_signin.'</div>';
 
 
                   }
@@ -224,7 +231,7 @@ if(isset($_POST['signin'])){
                 <input type="text" class="form-control"  placeholder="Mobile Number" id="exampleInputEmail1" id='mobile' name='mobile'>
               </div>
               <div class="text-center">
-                <input type="submit" value="Sign In" name="signin"  id="signin" class="btn btn-main text-center"    data-toggle="modal" data-target="#exampleModal" data-dismiss="modal" data-toggle="modal"
+                <input type="submit" value="Sign In" name="signin"  id="signin" class="btn btn-main text-center"    data-toggle="modal" data-target="#exampleModal"
 
 
                  />
@@ -255,7 +262,10 @@ if(isset($_POST['signin'])){
 
        </div>
 
-
+       <p style="color:red; font-size:100px;" >
+<?php echo $_SESSION['user_id']
+;?>
+       </p>
 
 </divition>
 
@@ -276,7 +286,6 @@ if(isset($_POST['signin'])){
 
 
 <divition class="about">
-
 
 
 <div class="row">
@@ -415,34 +424,66 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
 
 <divition class="Menu scrollrel-title">
 
-  <div class="whysus-content">
 
-      <h1 class="Menuh1">Menu</h1>
+
+
+  <div class="whysus-content scrollrel-title">
+
+      <h1 class="whyush1">Menu</h1>
       <div class="whyUs-line">
 
 
     </div>
     <br />
-  <h1 class="Menu-P scrollrel-h1">Why Choose Our Bakerya </h1>
+  <h1 class="wychose scrollrel-h1">Our menu</h1>
    </div>
+   <br />
+   <br />
+   <br />
 
 
-   <br/>
-   <div class="row">
-     <div class="col">
+     <div class="row wy-us-row">
 
+
+       <?php
+       $select_item = mysqli_query($conn,"select * from `item`")or die ("query failed");
+       if(mysqli_num_rows($select_item)>0){
+         while (  $fetch_item=mysqli_fetch_assoc($select_item)) {
+                 $itemID=$fetch_item['Icode'];
+ ?>
+
+
+     <div class="col-sm-12 col-lg-4 col-cust-responsive">
+   <div class=" size-img div-menu image-fluid">
+     <div class="product-item">
+       <div class="item-thumb">
+         <?php echo'<img src="data:image;base64,'.base64_encode($fetch_item['image']).'" alt="image" class="menu-item-images image-fluid" width="200px" height="200px>';?>
+
+       </div>
+       <div class="item-content">
+         <h4 class="menu-item-h1"><?php echo $fetch_item['name'];?></h4>
+         <p class="menu-item-p1"><?php echo $fetch_item['price'];?></p>
+         <a class="btn-addtocart" href="cart.php" id="addtocart">
+        add to wishList
+      </a>
+
+       </div>
      </div>
-     <ul class="menu-list">
-       <li class="menu-item"> <a href="" class="menu-item-a">Chocolate </a></li>
-        <li class="menu-item"> <a href="" class="menu-item-a">Chocolate </a></li>
-     <li class="menu-item"> <a href="" class="menu-item-a">Chocolate </a></li>
-     <li class="menu-item"> <a href="" class="menu-item-a">Chocolate </a></li>
-
-     </ul>
-
-     <div class="col">
-
+   </div>
      </div>
+
+ <?php
+
+
+
+
+         };
+
+
+       };
+       ?>
+
+
    </div>
 
 
@@ -824,6 +865,7 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
 
 <script src="app.js">
 </script>
+<!--
 <script>
 
 ScrollReveal({
@@ -861,7 +903,7 @@ ScrollReveal({
           ScrollReveal().reveal('.instagram',{delay:500, origin: 'bottom'})
            ScrollReveal().reveal('.whatsapp',{delay:550, origin: 'bottom'})
 </script>
-
+-->
 <!--Bootstrap js files-->
 <!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"></script>
@@ -869,3 +911,17 @@ ScrollReveal({
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+
+<?php
+include"config.php";
+
+if(isset($_GET['user_Id'])){
+
+$user_id=$_GET['user_Id'];
+
+}
+
+
+
+ ?>

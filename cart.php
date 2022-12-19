@@ -6,8 +6,18 @@ $user_id = $_SESSION['user_id'];
 
 if(!isset($user_id)){
    header('location:login.php');
-   echo"<h1 style='color:red'>$user_id</h1>";
 };
+
+if(isset($_GET['logout'])){
+  unset($user_id);
+  session_destroy();
+  header('location:home.php');
+}
+if(isset($_GET['gohome'])){
+    header('location:home.php?user_ID=$user_id');
+}
+
+
  ?>
 
 <!doctype html>
@@ -56,7 +66,7 @@ if(!isset($user_id)){
           <h1 class="cart-h1-desc">WishList</h1>
           <br />
           <p>
-            <span class="cart-span-home">Home/</span><span class="cart-span-wishList">WishList</span>
+            <span class="cart-span-home"><a href="home.php?userId=<?php echo $user_id;?>" name="gohome">Home/</a></span><span class="cart-span-wishList">WishList</span>/<span class="cart-span-home"><a href="cart.php?logout=<?php echo $user_id;?>" onclick="return confirm('are your sure you want to logout')" class="delete-btn cart-span-home">Logout</a></span>
           </p>
         </div>
       </div>
@@ -68,11 +78,6 @@ if(!isset($user_id)){
 
   </divition>
 
-<?php
-echo"<h1 style='color:red'>$user_id</h1>";
-
-
-?>
   <footer id="footer">
     <div class="footer-top">
       <div class="footer-continer">
