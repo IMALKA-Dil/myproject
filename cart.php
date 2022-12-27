@@ -4,6 +4,11 @@ include 'config.php';
 
 $user_id = $_SESSION['user_id'];
 
+if(isset($_GET['cart_quantity'])){
+   $update_quantity = $_GET['cart_quantity'];
+   $update_id = $_GET['cart_id'];
+   mysqli_query($conn, "UPDATE `cart` SET quantity = '$update_quantity' WHERE Icode = '$update_id'") or die('query failed');
+   $message[] = 'cart quantity updated successfully!';};
 if(!isset($user_id)){
    header('location:login.php');
 };
@@ -17,6 +22,21 @@ if(isset($_GET['gohome'])){
     header('location:home.php?user_ID=$user_id');
 }
 
+if(isset($_GET['remove'])){
+   $remove_id = $_GET['remove'];
+   mysqli_query($conn, "DELETE FROM `cart` WHERE Icode = '$remove_id'") or die('query failed');
+   header('location:cart.php');
+}
+
+if(isset($_GET['delete_all'])){
+   mysqli_query($conn, "DELETE FROM `cart` WHERE userId = '$user_id'") or die('query failed');
+   header('location:cart.php');
+}
+
+
+
+ ?>
+ <?php
 
  ?>
 
@@ -55,9 +75,9 @@ if(isset($_GET['gohome'])){
 
     </div>
   </header>
-  <divition class="cart-divitsion">
+  <divition class="row cart-divitsion">
 
-    <div class="row">
+    <div class="row-cart">
       <div class="col-1">
 
       </div>
@@ -70,11 +90,78 @@ if(isset($_GET['gohome'])){
           </p>
         </div>
       </div>
-      <div class="col">
+      <div class="col-10">
 
       </div>
-
     </div>
+
+<div class="cart-table-container">
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="block">
+        <div class="product-list">
+          <form method="" action="">
+            <table class="cart-table">
+      <thead>
+         <th class="cart-th-name"> Name</th>
+         <th class="cart-th">price</th>
+         <th class="cart-th"> quantity</th>
+         <th class="cart-th">total price</th>
+         <th class="cart-th">action</th>
+      </thead>
+      <tbody>
+      <?php
+         $cart_query = mysqli_query($conn, "SELECT * FROM `cart` C,`item` T WHERE userId = '$user_id' and C.Icode=T.Icode") or die('query failed');
+         $grand_total = 0;
+         if(mysqli_num_rows($cart_query) > 0){
+            while($fetch_cart = mysqli_fetch_assoc($cart_query)){
+      ?>
+         <tr>
+            <td class="cart-td-name">
+              <div class="Item-info-cart">
+                <div>
+                      <?php echo'<img src="data:image;base64,'.base64_encode($fetch_cart['image']).'" alt="image" style="width:80px; height:100px; ">';?>
+                </div>
+                <div>
+                  <?php echo $fetch_cart['name']; ?>
+                </div>
+
+              </div>
+
+
+              </td>
+
+            <td class="cart-td">$<?php echo $fetch_cart['price']; ?>/-</td>
+            <td class="cart-td">
+               <form action="" method="post">
+                  <input type="hidden" name="cart_id" value="<?php echo $fetch_cart['Icode']; ?>">
+                  <input type="number" min="1" name="cart_quantity" class="cart_quantity" value="<?php echo $fetch_cart['quantity']; ?>">
+                  <input type="submit" name="update_cart" value="update" class="cart_quantity-btn option-btn">
+               </form>
+            </td>
+            <td class="cart-td">$<?php echo $sub_total = ($fetch_cart['price'] * $fetch_cart['quantity']); ?>/-</td>
+            <td class="cart-td"><a href="cart.php?remove=<?php echo $fetch_cart['Icode']; ?>" class="cart-delete-btn" onclick="return confirm('remove item from cart?');">remove</a></td>
+         </tr>
+      <?php
+         $grand_total += $sub_total;
+            }
+         }else{
+            echo '<tr><td style="padding:20px; text-transform:capitalize;" colspan="6">no item added</td></tr>';
+         }
+      ?>
+      <tr class="table-bottom">
+         <td colspan="4" class="cart-bottom-td">grand total :</td>
+         <td  class="cart-td cart-td-b">$<?php echo $grand_total; ?>/-</td>
+         <td class="cart-td cart-td-b"><a href="cart.php?delete_all" onclick="return confirm('delete all from cart?');" class="cart-delete-btn <?php echo ($grand_total > 1)?'':'disabled'; ?>">deleteAll</a></td>
+      </tr>
+   </tbody>
+   </table>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
   </divition>
 

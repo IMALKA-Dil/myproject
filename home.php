@@ -1,6 +1,9 @@
 <?php
 session_start();
+$check_session =0;
+
 include 'config.php';
+    $user_idintification =0;
 if(isset($_POST['login'])){
 $name= mysqli_real_escape_string($conn,$_POST['name']);
 $password= mysqli_real_escape_string($conn,$_POST['password']);
@@ -9,6 +12,7 @@ $select= mysqli_query($conn,"select * from `user` where name='$name' and passwor
 if(mysqli_num_rows($select) > 0){
       $row = mysqli_fetch_assoc($select);
       $_SESSION['user_id'] = $row['userId'];
+    $user_idintification=  $_SESSION['user_id'];
       header('location:cart.php');
   //    echo($_SESSION);
    }else{
@@ -35,7 +39,6 @@ if(isset($_POST['signin'])){
    }
 
 }
-
 
 
 
@@ -92,7 +95,6 @@ if(isset($_POST['signin'])){
           <li>
 
 
-
   <a href="" class="model-btn" data-toggle="modal" data-target="#exampleModal" onclick="closeDropDownMenu();">Account</a>
 
 
@@ -103,10 +105,17 @@ if(isset($_POST['signin'])){
 
 
         <li>
-          <a class="btn-wishList" href="cart.php" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         WishList
-       </a>
 
+          <form action="" method="post">
+            <input type="hidden" name="user_id" value="<?php echo   $_SESSION['user_id'] ?>">
+            <input type="submit" value="wishList"class="btn-wishList" name="wishList" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
+          </form>
+          <!--
+          <a class="btn-wishList"  id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         WishList
+
+       </a>
+-->
         </li>
 
        <li class="dropDownIcon"><a href="javascript:void(0);" onclick="dropDownMenu()"><div class="menu-btn">
@@ -120,130 +129,6 @@ if(isset($_POST['signin'])){
 
 
   </header>
-
-
-  <!-- Models -->
-
-
-
-  <!-- Button trigger modal -->
-
-
-  <!-- Modal -->
-
-
-
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Login</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <h1 class="modal-h1">WELCOME BACK</h1>
-
-          <?php
-
-
-            if(isset($message)){
-              foreach ($message as $message) {
-
-
-         echo '<div class="message" onclick="this.remove();">'.$message.'</div>';
-
-
-              }
-            }
-
-          ?>
-          <form action="" method="post">
-        <div class="form-group">
-
-          <input   type="text" class="form-control"  placeholder="Name" name="name" id="name" id="exampleInputEmail1" aria-describedby="nameHelp" >
-
-        </div>
-        <div>
-
-          <br />
-        </div>
-        <div class="form-group">
-
-          <input type="password" class="form-control" name="password" id="password" id="exampleInputPassword1" placeholder="Password">
-        </div>
-
-        <div class="text-center">
-          <input type="submit" class="btn btn-main text-center" name="login" id="login" value="login"/>
-        </div>
-      </form>
-                <p class="mt-20 modal-p">New in this site ?  <a href=""  data-toggle="modal" data-target="#exampleModal1">Create New Account</a>
-</p>
-        </div>
-        <div class="modal-footer">
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-
-
-    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Sign In</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <h2 class="modal-h1">Create Your Account</h2>
-
-              <?php
-                if(isset($message_signin)){
-                  foreach ($message_signin as $message_signin) {
-
-
-             echo '<div class="message" onclick="this.remove();">'.$message_signin.'</div>';
-
-
-                  }
-                }
-
-              ?>
-            <form class="text-left clearfix" action="" method="post">
-              <div class="form-group">
-                <input type="text" class="form-control"  placeholder=" Name" id="exampleInputEmail1" id="name" name='name'>
-              </div>
-
-              <div class="form-group">
-                <input type="email" class="form-control"  placeholder="Email" id="exampleInputEmail1" id='email' name="email">
-              </div>
-              <div class="form-group">
-                <input type="password" class="form-control"  placeholder="Password" id='password'  id="exampleInputPassword1" name='password'>
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control"  placeholder="Mobile Number" id="exampleInputEmail1" id='mobile' name='mobile'>
-              </div>
-              <div class="text-center">
-                <input type="submit" value="Sign In" name="signin"  id="signin" class="btn btn-main text-center"    data-toggle="modal" data-target="#exampleModal"
-
-
-                 />
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-
-          </div>
-        </div>
-      </div>
-    </div>
 
 
 
@@ -262,10 +147,7 @@ if(isset($_POST['signin'])){
 
        </div>
 
-       <p style="color:red; font-size:100px;" >
-<?php echo $_SESSION['user_id']
-;?>
-       </p>
+
 
 </divition>
 
@@ -449,13 +331,14 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
        $select_item = mysqli_query($conn,"select * from `item`")or die ("query failed");
        if(mysqli_num_rows($select_item)>0){
          while (  $fetch_item=mysqli_fetch_assoc($select_item)) {
-                 $itemID=$fetch_item['Icode'];
+
  ?>
 
 
      <div class="col-sm-12 col-lg-4 col-cust-responsive">
    <div class=" size-img div-menu image-fluid">
      <div class="product-item">
+        <form method="post" class="box" action="">
        <div class="item-thumb">
          <?php echo'<img src="data:image;base64,'.base64_encode($fetch_item['image']).'" alt="image" class="menu-item-images image-fluid" width="200px" height="200px>';?>
 
@@ -463,11 +346,12 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
        <div class="item-content">
          <h4 class="menu-item-h1"><?php echo $fetch_item['name'];?></h4>
          <p class="menu-item-p1"><?php echo $fetch_item['price'];?></p>
-         <a class="btn-addtocart" href="cart.php" id="addtocart">
-        add to wishList
-      </a>
-
+     <input type="hidden" name="product_id" value="<?php echo $fetch_item['Icode']; ?>">
+                    <input type="hidden" name="product_name" value="<?php echo $fetch_item['name']; ?>">
+         <input type="hidden" name="product_price" value="<?php echo $fetch_item['price']; ?>">
+<input type="submit" class="btn-addtocart" id="addtocart" value="add to WishList" name="add_to_cart">
        </div>
+     </form>
      </div>
    </div>
      </div>
@@ -856,6 +740,130 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
 
 
 
+  <!-- Models -->
+
+
+
+  <!-- Button trigger modal -->
+
+
+  <!-- Modal -->
+
+
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h1 class="modal-h1">WELCOME BACK</h1>
+
+          <?php
+
+
+            if(isset($message)){
+              foreach ($message as $message) {
+
+
+         echo '<div class="message" onclick="this.remove();">'.$message.'</div>';
+
+
+              }
+            }
+
+          ?>
+          <form action="" method="post">
+        <div class="form-group">
+
+          <input   type="text" class="form-control"  placeholder="Name" name="name" id="name" id="exampleInputEmail1" aria-describedby="nameHelp" >
+
+        </div>
+        <div>
+
+          <br />
+        </div>
+        <div class="form-group">
+
+          <input type="password" class="form-control" name="password" id="password" id="exampleInputPassword1" placeholder="Password">
+        </div>
+
+        <div class="text-center">
+          <input type="submit" class="btn btn-main text-center" name="login" id="login" value="login"/>
+        </div>
+      </form>
+                <p class="mt-20 modal-p">New in this site ?  <a href=""  data-toggle="modal" data-target="#exampleModal1">Create New Account</a>
+</p>
+        </div>
+        <div class="modal-footer">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Sign In</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h2 class="modal-h1">Create Your Account</h2>
+
+              <?php
+                if(isset($message_signin)){
+                  foreach ($message_signin as $message_signin) {
+
+
+             echo '<div class="message" onclick="this.remove();">'.$message_signin.'</div>';
+
+
+                  }
+                }
+
+              ?>
+            <form class="text-left clearfix" action="" method="post">
+              <div class="form-group">
+                <input type="text" class="form-control"  placeholder=" Name" id="exampleInputEmail1" id="name" name='name'>
+              </div>
+
+              <div class="form-group">
+                <input type="email" class="form-control"  placeholder="Email" id="exampleInputEmail1" id='email' name="email">
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control"  placeholder="Password" id='password'  id="exampleInputPassword1" name='password'>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control"  placeholder="Mobile Number" id="exampleInputEmail1" id='mobile' name='mobile'>
+              </div>
+              <div class="text-center">
+                <input type="submit" value="Sign In" name="signin"  id="signin" class="btn btn-main text-center"    data-toggle="modal" data-target="#exampleModal"
+
+
+                 />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
 
 
 
@@ -924,4 +932,51 @@ $user_id=$_GET['user_Id'];
 
 
 
+if(isset($_POST['add_to_cart'])){
+
+  if(!session_id()==''){
+    ?>
+    <script>
+  $(document).ready(function(){
+    $("#exampleModal").modal('show');
+  });
+    </script>
+    <?php
+  }
+  elseif(!session_id()==''){
+
+
+      $user_idintification=$_SESSION['user_id'];
+      $product_id = $_POST['product_id'];
+    $product_name = $_POST['product_name'];
+  $product_price = $_POST['product_price'];
+  $product_image = $_POST['product_id'];
+
+
+  $select_cart = mysqli_query($conn, "SELECT * FROM `cart` WHERE Icode = '$product_id' AND userId = '$user_idintification'") or die('query failed');
+
+  if(mysqli_num_rows($select_cart) > 0){
+     $message[] = 'product already added to cart!';
+  }else{
+     mysqli_query($conn, "INSERT INTO `cart`(Icode,userId, Price) VALUES('$product_id', '$user_idintification', '$product_price')") or die('query failed');
+
+  }
+
+  }
+
+};
+  if(isset($_POST['wishList'])){
+    if(!session_id()==''){
+      ?>
+      <script>
+    $(document).ready(function(){
+      $("#exampleModal").modal('show');
+    });
+      </script>
+      <?php
+    }
+    elseif(!session_id()==''){
+  header('location:cart.php');
+};
+  }
  ?>
