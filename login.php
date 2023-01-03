@@ -1,12 +1,7 @@
 <?php
 include 'config.php';
-session_start();
-$user_id = $_SESSION['user_Id'];
 
-if(!isset($user_id)){
-   
-    echo"$user_id";
- }
+
  ?>
 
 
@@ -15,13 +10,14 @@ include 'config.php';
 if(isset($_POST['submit'])){
 $name= mysqli_real_escape_string($conn,$_POST['name']);
 $password= mysqli_real_escape_string($conn,$_POST['password']);
-$select= mysqli_query($conn,"select * from `user` where name='$name' and password='$password'") or die ('query failed');
+$select= mysqli_query($conn,"select * from `admin` where name='$name' and password='$password'") or die ('query failed');
 
 if (mysqli_num_rows($select)> 0) {
-  $row = mysqli_fetch_assoc($select);
-  $_SESSION['user_id'] = $row['userid'];
-  header('location:home.php');
-
+  ?>
+  <script>
+  window.location.replace('dashboard.php');
+  </script>
+<?php
 }
 else{
   $message[] ='incorrect password or user name';
@@ -118,7 +114,7 @@ else{
               <input type="submit" class="btn btn-main text-center" name="submit" id="submit" value="submit"/>
             </div>
           </form>
-          <p class="mt-20">New in this site ?<a href="signin.php"> Create New Account</a></p>
+          <p class="mt-20">Are you admin ?<a href="home.php"> Home</a></p>
         </div>
       </div>
       <div class="col">

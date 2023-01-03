@@ -89,7 +89,7 @@ if(isset($_POST['signin'])){
         <li><a href="#"  onclick="closeDropDownMenu();">About</a></li>
         <li><a href="#"  onclick="closeDropDownMenu();">Menu</a></li>
       <!--  <li><a href="#">Specials</a></li> -->
-        <li><a href="#"  onclick="closeDropDownMenu();">Events</a></li>
+
         <li><a href="#"  onclick="closeDropDownMenu();">Gallery</a></li>
         <li><a href="#"  onclick="closeDropDownMenu();">Contact</a></li>
           <li>
@@ -103,20 +103,30 @@ if(isset($_POST['signin'])){
 
 
 
-
+      <!--
         <li>
 
           <form action="" method="post">
-            <input type="hidden" name="user_id" value="<?php echo   $_SESSION['user_id'] ?>">
+            <input type="hidden" name="user_id" value='
+            <?php
+              if(session_status()===PHP_SESSION_NONE){
+                echo 0;
+ }
+            else{
+                          echo $_SESSION["user_id"];
+            };
+            ?>
+            '>
             <input type="submit" value="wishList"class="btn-wishList" name="wishList" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
           </form>
-          <!--
+
           <a class="btn-wishList"  id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          WishList
 
        </a>
--->
+
         </li>
+      -->
 
        <li class="dropDownIcon"><a href="javascript:void(0);" onclick="dropDownMenu()"><div class="menu-btn">
     <div class="menu-btn__burger"></div>
@@ -437,7 +447,7 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
 </divition>
 
 
--->
+
 
 <divition class="events">
 
@@ -552,7 +562,7 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
 
 
 </divition>
-
+-->
 <divition class="Contact">
 
 
@@ -598,7 +608,7 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
 <form action="" method="" class="php-email-form">
   <div class="row">
     <div class="col-md-6 form-group">
-      <input type="text" class="form-control text-email" name="name" id="name" placeholder="Your Name" required/>
+      <input type="text" class="form-control text-email" name="username" id="name" placeholder="Your Name" required/>
     </div>
     <div class="col-md-6 form-group mt-3 mt-md-0">
       <input type="email" class="form-control text-email" id="email" name="email" placeholder="Your Email" required/>
@@ -616,7 +626,7 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
                <div class="error-message"></div>
                <div class="sent-message">Your message has been sent. Thank you!</div>
              </div>
-             <div class="text-center"><button type="submit">Send Message</button></div>
+             <div class="text-center"><button type="submit" name="email-submit" id="emailsubmit">Send Message</button></div>
 
 </form>
 </div>
@@ -780,7 +790,7 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
           <form action="" method="post">
         <div class="form-group">
 
-          <input   type="text" class="form-control"  placeholder="Name" name="name" id="name" id="exampleInputEmail1" aria-describedby="nameHelp" >
+          <input   type="text" class="form-control"  placeholder="Name" name="name" id="name" id="exampleInputEmail1" aria-describedby="nameHelp" required>
 
         </div>
         <div>
@@ -789,7 +799,7 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
         </div>
         <div class="form-group">
 
-          <input type="password" class="form-control" name="password" id="password" id="exampleInputPassword1" placeholder="Password">
+          <input type="password" class="form-control" name="password" id="password" id="exampleInputPassword1" placeholder="Password" required>
         </div>
 
         <div class="text-center">
@@ -836,17 +846,17 @@ dolor sit amet, consectetur <br />adipiscing elit, sed do
               ?>
             <form class="text-left clearfix" action="" method="post">
               <div class="form-group">
-                <input type="text" class="form-control"  placeholder=" Name" id="exampleInputEmail1" id="name" name='name'>
+                <input type="text" class="form-control"  placeholder=" Name" id="exampleInputEmail1" id="name" name='name' required>
               </div>
 
               <div class="form-group">
-                <input type="email" class="form-control"  placeholder="Email" id="exampleInputEmail1" id='email' name="email">
+                <input type="email" class="form-control"  placeholder="Email" id="exampleInputEmail1" id='email' name="email" required>
               </div>
               <div class="form-group">
-                <input type="password" class="form-control"  placeholder="Password" id='password'  id="exampleInputPassword1" name='password'>
+                <input type="password" class="form-control"  placeholder="Password" id='password'  id="exampleInputPassword1" name='password' required>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control"  placeholder="Mobile Number" id="exampleInputEmail1" id='mobile' name='mobile'>
+                <input type="text" class="form-control"  placeholder="Mobile Number" id="exampleInputEmail1" id='mobile' name='mobile' required>
               </div>
               <div class="text-center">
                 <input type="submit" value="Sign In" name="signin"  id="signin" class="btn btn-main text-center"    data-toggle="modal" data-target="#exampleModal"
@@ -917,6 +927,15 @@ ScrollReveal({
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+
+<script>
+
+$("#emailsubmit").submit(function(e){
+  e.preventDefault();
+  var form =this;
+  form.submit;
+});
+</script>
 </body>
 </html>
 
@@ -931,10 +950,9 @@ $user_id=$_GET['user_Id'];
 }
 
 
-
 if(isset($_POST['add_to_cart'])){
 
-  if(!session_id()==''){
+  if(session_id()==''){
     ?>
     <script>
   $(document).ready(function(){
@@ -965,18 +983,57 @@ if(isset($_POST['add_to_cart'])){
   }
 
 };
-  if(isset($_POST['wishList'])){
-    if(!session_id()==''){
-      ?>
-      <script>
-    $(document).ready(function(){
-      $("#exampleModal").modal('show');
-    });
-      </script>
-      <?php
-    }
-    elseif(!session_id()==''){
-  header('location:cart.php');
-};
+if(isset($_POST['wishList'])){
+
+
+  if(!session_id()==''){
+    ?>
+    <script>
+  $(document).ready(function(){
+    $("#exampleModal").modal('show');
+  });
+    </script>
+    <?php
   }
- ?>
+  elseif(!session_id()==''){
+?>
+<script>
+window.location.replace('cart.php');
+</script>
+<?php
+
+};
+};
+
+if (isset($_POST['email-submit'])){
+  $name=$_POST['username'];
+  $Email=$_POST['email'];
+  $Subject=$_POST['submit'];
+  $message=$_POST['message'];
+
+$to ="imalkadilshan0910@gmail.com";
+$mail_subject ="Message from web site";
+$email_body="message from contact us page of the web page:<br />";
+$email_body.="from :<br />{$Email}<br />";
+$email_body.="from :<br />{$subject}<br />";
+$email_body.="from :<br />{$message}<br />". nl2br(strip_tags($message));
+$header="From :{$email}\r\nContent-type:text/html;";
+$send_mail_result=mail($to,$mail_subject,$email_body,$header);
+
+if($send_mail_result){
+  echo"<script>
+alert('Message sent');
+  </script>";
+}
+else{
+  echo"<script>
+alert('Message not send');
+  </script>";
+}
+
+}
+
+
+
+
+?>
