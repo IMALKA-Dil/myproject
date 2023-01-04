@@ -29,3 +29,15 @@ menuBtn.addEventListener('click', () => {
     menuOpen = false;
   }
 });
+
+const la=document.querySelectorAll(".active-links");
+const div=document.querySelectorAll("divition");
+function activeMenu(){
+  let len=div.length;
+  while(--len && window.scrollY + 97 < div[len].offsetTop){}
+    la.forEach(ltx => ltx.classList.remove("active"));
+    la[len].classList.add("active");
+
+}
+activeMenu();
+window.addEventListener("scroll",activeMenu);

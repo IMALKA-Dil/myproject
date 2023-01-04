@@ -116,7 +116,7 @@ header ('location:eform.php?product_number='.$productID);
         <div>
           <br />
           <p>
-            <span class="cart-span-home"><a href="home.php" name="gohome">Home/</a></span><span class="cart-span-wishList"><a href="order.php" name="gohome">Order/</a></span>/<span class="cart-span-home"><a href="cart.php?logout=<?php echo $user_id;?>" onclick="return confirm('are your sure you want to logout')" class="delete-btn cart-span-home">Logout</a></span>
+            <span class="cart-span-home"><a href="index.php" name="gohome">Home/</a></span><span class="cart-span-wishList"><a href="order.php" name="gohome">Order/</a></span>/<span class="cart-span-home"><a href="cart.php?logout=<?php echo $user_id;?>" onclick="return confirm('are your sure you want to logout')" class="delete-btn cart-span-home">Logout</a></span>
           </p>
         </div>
       </div>

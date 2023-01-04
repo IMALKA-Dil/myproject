@@ -16,10 +16,10 @@ if(!isset($user_id)){
 if(isset($_GET['logout'])){
   unset($user_id);
   session_destroy();
-  header('location:home.php');
+  header('location:index.php');
 }
 if(isset($_GET['gohome'])){
-    header('location:home.php?user_ID=$user_id');
+    header('location:index.php?user_ID=$user_id');
 }
 
 if(isset($_GET['remove'])){
@@ -91,7 +91,7 @@ if(isset($_GET['delete_all'])){
           <h1 class="cart-h1-desc">WishList</h1>
           <br />
           <p>
-            <span class="cart-span-home"><a href="home.php?userId=<?php echo $user_id;?>" name="gohome">Home/</a></span><span class="cart-span-wishList">WishList</span>/<span class="cart-span-home"><a href="cart.php?logout=<?php echo $user_id;?>" onclick="return confirm('are your sure you want to logout')" class="delete-btn cart-span-home">Logout</a></span>
+            <span class="cart-span-home"><a href="index.php?userId=<?php echo $user_id;?>" name="gohome">Home/</a></span><span class="cart-span-wishList">WishList</span>/<span class="cart-span-home"><a href="cart.php?logout=<?php echo $user_id;?>" onclick="return confirm('are your sure you want to logout')" class="delete-btn cart-span-home">Logout</a></span>
           </p>
         </div>
       </div>

@@ -153,6 +153,13 @@ ul.topnav li a:hover {
   color: #7E5936;
   transition: -10px; }
 
+.active {
+  letter-spacing: 4px;
+  font-size: 22px;
+  transition: 0.3s;
+  color: #7E5936;
+  transition: -10px; }
+
 ul.topnav li.dropDownIcon {
   display: none; }
 
@@ -820,6 +827,9 @@ a.footer-links-designer:hover {
 .legend-e-form {
   color: #7E5936;
   font-size: 20px; }
+
+.fa-circle {
+  color: #7E5936; }
 
 .btn-wishList {
   padding: 10px 30px;
